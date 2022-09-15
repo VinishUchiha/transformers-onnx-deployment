@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paraphrase-api-deployment
+  labels: 
+    app: paraphrase-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: paraphrase-api
+  template:
+    metadata:
+      labels:
+        app: paraphrase-api
+    spec:
+      containers:
+      - name: paraphrase-api
+        image: vinishuchiha/paraphrase-api
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            nvidia.com/gpu: 1

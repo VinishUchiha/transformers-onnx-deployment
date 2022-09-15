@@ -1,0 +1,7 @@
+torch
+fastapi
+uvicorn
+tqdm
+transformers
+onnxruntime-gpu
+sentencepiece
